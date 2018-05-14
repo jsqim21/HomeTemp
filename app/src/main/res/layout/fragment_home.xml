@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_alignParentLeft="true"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="온도"
+                        android:textSize="20dp"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="25"
+                        android:textSize="40dp"
+                        />
+
+                    <com.github.anastr.speedviewlib.SpeedView
+                        android:id="@+id/tempSpeedView"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        app:sv_startDegree="180"
+                        app:sv_speedTextSize="0dp"
+                        app:sv_tickNumber="5"
+                        app:sv_lowSpeedPercent="37"
+                        app:sv_mediumSpeedPercent="50"
+                        app:sv_indicator="NeedleIndicator"
+                        app:sv_lowSpeedColor="@color/temp_cold"
+                        app:sv_mediumSpeedColor="@color/temp_good"
+                        app:sv_highSpeedColor="@color/temp_hot"
+                        app:sv_endDegree="360" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_alignParentRight="true"
+
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="습도"
+                        android:textSize="20dp"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="44%"
+                        android:textSize="40dp"
+                        />
+
+                    <com.github.anastr.speedviewlib.SpeedView
+                        android:id="@+id/humidSpeedView"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        app:sv_startDegree="180"
+                        app:sv_speedTextSize="0dp"
+                        app:sv_lowSpeedPercent="40"
+                        app:sv_mediumSpeedPercent="70"
+                        app:sv_lowSpeedColor="@color/temp_cold"
+                        app:sv_mediumSpeedColor="@color/temp_good"
+                        app:sv_highSpeedColor="@color/temp_hot"
+                        app:sv_endDegree="360" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/chart1"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_above="@+id/seekBar1" />
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</android.support.v4.widget.NestedScrollView>
